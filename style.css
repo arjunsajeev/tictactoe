@@ -1,0 +1,110 @@
+body {
+  background-color: lightpink;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Board */
+
+.board {
+  background-color: white;
+  width: 18rem;
+  height: 18rem;
+  box-shadow: 1px 1px 0px 5px maroon;
+}
+
+.row {
+  display: flex;
+  height: 6rem;
+}
+
+.cell {
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid rgb(209, 180, 180);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: maroon;
+  font-size: 1.5rem;
+}
+
+/* Overlay */
+
+.overlay {
+  background: white;
+  color: maroon;
+  font-size: 1.4rem;
+  padding-bottom: 10px;
+  border: 3px solid black;
+  width: 400px;
+  /* height: 200px; */
+  position: absolute;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  /* background: red; */
+}
+
+.overlay button {
+  border: none;
+  padding: 10px;
+  border: 1px solid maroon;
+}
+
+/* Animation */
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+}
+
+@keyframes wobble {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
