@@ -4,13 +4,14 @@ const player = 'X',
   ai = 'O'
 
 const board = document.querySelector('.board')
-const overlayEl = document.querySelector('.overlay')
-overlayEl.querySelector('button').addEventListener('click', handleReset)
+const messageEl = document.querySelector('.message')
+messageEl.querySelector('button').addEventListener('click', handleReset)
 
 // Game
 
 function handleReset() {
-  overlayEl.style.visibility = 'hidden'
+  messageEl.style.visibility = 'hidden'
+  messageEl.classList.remove('success', 'failure')
   board.classList.remove('animated', 'wobble')
   clearBoard()
   start()
@@ -82,17 +83,17 @@ start()
 
 //displayMessage
 
-function displayMessage(message, color = 'maroon') {
+function displayMessage(message, type = 'info') {
   board.removeEventListener('click', handleBoardClick, false)
-  overlayEl.querySelector('p').textContent = message
-  overlayEl.style.borderColor = color
-  overlayEl.style.visibility = 'visible'
+  messageEl.querySelector('p').textContent = message
+  messageEl.classList.add(type)
+  messageEl.style.visibility = 'visible'
 }
 
 function displaySuccessMessage(message) {
-  displayMessage(message, 'green')
+  displayMessage(message, 'success')
 }
 
 function displayFailureMessage(message) {
-  displayMessage(message, 'red')
+  displayMessage(message, 'failure')
 }

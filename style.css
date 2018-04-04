@@ -3,8 +3,16 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Acme', sans-serif;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
 }
 
 /* Board */
@@ -13,7 +21,7 @@ body {
   background-color: white;
   width: 18rem;
   height: 18rem;
-  box-shadow: 1px 1px 0px 5px maroon;
+  /* box-shadow: 1px 1px 0px 5px maroon; */
 }
 
 .row {
@@ -24,7 +32,7 @@ body {
 .cell {
   width: 6rem;
   height: 6rem;
-  border: 1px solid rgb(209, 180, 180);
+  border: 1px solid lightpink;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,14 +42,11 @@ body {
 
 /* Overlay */
 
-.overlay {
+.message {
   background: white;
   color: maroon;
   font-size: 1.4rem;
-  padding-bottom: 10px;
-  border: 3px solid black;
-  width: 400px;
-  /* height: 200px; */
+  padding: 1rem;
   position: absolute;
   top: 10px;
   display: flex;
@@ -49,13 +54,24 @@ body {
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  box-shadow: 1px 1px 10px maroon;
   /* background: red; */
 }
 
-.overlay button {
+.message.success {
+  box-shadow: 1px 1px 10px green;
+}
+
+.message.failure {
+  box-shadow: 1px 1px 10px red;
+}
+
+.message button {
   border: none;
   padding: 10px;
+  background-color: white;
   border: 1px solid maroon;
+  font-family: 'Acme', sans-serif;
 }
 
 /* Animation */
